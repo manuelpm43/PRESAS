@@ -23,6 +23,19 @@ const capaPresas = new IDEE.layer.GeoJSON({
 });
 
 mapa.addLayers(capaPresas);
+
+// Estilo SVG para las presas
+const estiloPresas = new IDEE.style.Generic({
+    point: {
+        icon: {
+            src: "img/presa.svg",
+            scale: 1
+        }
+    }
+});
+
+capaPresas.setStyle(estiloPresas);
+
 function mostrarFichaPresa(atributos) {
 
     const panelInfo = document.getElementById("info");
