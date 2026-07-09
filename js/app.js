@@ -4,6 +4,16 @@ const mapa = IDEE.map({
     center: [-467062.8225, 4983459.6216]
 });
 console.log(mapa);
+
+const ortofoto = new IDEE.layer.WMS({
+    url: "https://www.ign.es/wms-inspire/pnoa-ma?",
+    name: "OI.OrthoimageCoverage",
+    legend: "Ortofoto PNOA",
+    isBase: true
+});
+
+mapa.addLayers(ortofoto);
+
 const provincias = new IDEE.layer.WMS({
     url: "https://www.ign.es/wms-inspire/unidades-administrativas?",
     name: "AU.AdministrativeUnit",
