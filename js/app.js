@@ -1,18 +1,37 @@
+IDEE.config("backgroundlayers", [
+    {
+        id: "cartografia",
+        title: "Carto",
+        layers: [
+            "WMTS*https://www.ign.es/wmts/ign-base?*IGNBaseTodo*GoogleMapsCompatible*Callejero*false*image/png*false*false*true"
+        ]
+    },
+    {
+        id: "ortofoto",
+        title: "Ortofoto",
+        layers: [
+            "WMTS*https://www.ign.es/wmts/pnoa-ma?*OI.OrthoimageCoverage*GoogleMapsCompatible*imagen*false*image/jpeg*false*false*true"
+        ]
+    },
+    {
+        id: "hibrido",
+        title: "Híbrido",
+        layers: [
+            "WMTS*https://www.ign.es/wmts/pnoa-ma?*OI.OrthoimageCoverage*GoogleMapsCompatible*imagen*true*image/jpeg*false*false*true",
+            "WMTS*https://www.ign.es/wmts/ign-base?*IGNBaseOrto*GoogleMapsCompatible*Callejero*true*image/png*false*false*true"
+        ]
+    }
+]);
+
 const mapa = IDEE.map({
     container: 'mapa',
+    controls: ['panzoom', 'scale*true', 'scaleline', 'rotate', 'location', 'backgroundlayers'],
     zoom: 5,
     center: [-467062.8225, 4983459.6216]
 });
 console.log(mapa);
 
-const ortofoto = new IDEE.layer.WMS({
-    url: "https://www.ign.es/wms-inspire/pnoa-ma?",
-    name: "OI.OrthoimageCoverage",
-    legend: "Ortofoto PNOA",
-    isBase: true
-});
 
-mapa.addLayers(ortofoto);
 
 const provincias = new IDEE.layer.WMS({
     url: "https://www.ign.es/wms-inspire/unidades-administrativas?",
@@ -20,6 +39,7 @@ const provincias = new IDEE.layer.WMS({
     legend: "Provincias"
 });
 mapa.addLayers(provincias);
+
 const capaPresas = new IDEE.layer.GeoJSON({
 
     url: "datos/geojson/puntos/presas.geojson",

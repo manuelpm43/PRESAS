@@ -6,76 +6,95 @@ body {
     height: 100%;
 }
 
-/* Aplicación completa */
+/* Aplicación */
 #app {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    grid-template-rows: 58px 1fr 250px 32px;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "info main"
-        "footer footer";
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     font-family: Arial, sans-serif;
+    background: #eef2f5;
 }
 
-/* Barra superior */
-#header {
-    grid-area: header;
+/* Panel lateral */
+#sidebar {
+    width: 340px;
+    background: #ffffff;
+    border-right: 1px solid #cfd6dd;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+/* Logo */
+#logo {
     background: #1f4e79;
     color: white;
+    padding: 18px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 0 18px;
+    gap: 14px;
 }
 
-.titulo-app {
-    font-size: 22px;
-    font-weight: bold;
-    min-width: 180px;
+.logo-icono {
+    font-size: 34px;
 }
 
-#buscador {
-    width: 320px;
-    padding: 9px 12px;
-    border-radius: 6px;
-    border: none;
-    font-size: 14px;
+#logo h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 1px;
 }
 
-.usuario {
-    margin-left: auto;
-    font-size: 14px;
+#logo p {
+    margin: 2px 0 0 0;
+    font-size: 13px;
+    opacity: 0.9;
 }
 
-/* Panel de capas */
-#sidebar {
-    grid-area: sidebar;
-    background: #f4f6f8;
-    border-right: 1px solid #cfd6dd;
-    padding: 16px;
+/* Bloques */
+.bloque {
+    padding: 16px 18px;
+    border-bottom: 1px solid #e1e6eb;
 }
 
-#sidebar h2,
-#info h2 {
-    margin-top: 0;
+.bloque h2 {
+    margin: 0 0 12px 0;
     color: #1f4e79;
-    font-size: 18px;
+    font-size: 17px;
 }
 
-#sidebar label {
+.bloque label {
     display: block;
-    padding: 8px 4px;
-    font-size: 15px;
+    padding: 6px 0;
+    font-size: 14px;
     cursor: pointer;
 }
 
-/* Zona del mapa */
+#buscador {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 10px;
+    border: 1px solid #cfd6dd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Información */
+.info {
+    margin-top: auto;
+    background: #f8fafc;
+    min-height: 210px;
+}
+
+.info p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Zona mapa */
 #main {
-    grid-area: main;
+    flex: 1;
     position: relative;
 }
 
@@ -84,40 +103,14 @@ body {
     height: 100%;
 }
 
-/* Panel de información */
-#info {
-    grid-area: info;
-    background: white;
-    border-top: 1px solid #cfd6dd;
-    border-right: 1px solid #cfd6dd;
-    padding: 16px;
-}
-
-#info p {
-    color: #555;
-    font-size: 14px;
-}
-
-/* Barra inferior */
-#footer {
-    grid-area: footer;
-    background: #263238;
-    color: white;
-    font-size: 13px;
-    padding: 8px 14px;
-}
-.ficha-presa {
-    font-family: Arial, sans-serif;
-    min-width: 260px;
-}
-
-.ficha-presa h2 {
+/* Ficha de presa */
+.ficha-presa-panel h3 {
     margin: 0 0 10px 0;
     color: #1f4e79;
     font-size: 20px;
 }
 
-.ficha-presa p {
+.ficha-presa-panel p {
     margin: 6px 0;
     font-size: 14px;
 }
