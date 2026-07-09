@@ -1,0 +1,123 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Aplicación completa */
+#app {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: 58px 1fr 250px 32px;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "info main"
+        "footer footer";
+    font-family: Arial, sans-serif;
+}
+
+/* Barra superior */
+#header {
+    grid-area: header;
+    background: #1f4e79;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 18px;
+}
+
+.titulo-app {
+    font-size: 22px;
+    font-weight: bold;
+    min-width: 180px;
+}
+
+#buscador {
+    width: 320px;
+    padding: 9px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+.usuario {
+    margin-left: auto;
+    font-size: 14px;
+}
+
+/* Panel de capas */
+#sidebar {
+    grid-area: sidebar;
+    background: #f4f6f8;
+    border-right: 1px solid #cfd6dd;
+    padding: 16px;
+}
+
+#sidebar h2,
+#info h2 {
+    margin-top: 0;
+    color: #1f4e79;
+    font-size: 18px;
+}
+
+#sidebar label {
+    display: block;
+    padding: 8px 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Zona del mapa */
+#main {
+    grid-area: main;
+    position: relative;
+}
+
+#mapa {
+    width: 100%;
+    height: 100%;
+}
+
+/* Panel de información */
+#info {
+    grid-area: info;
+    background: white;
+    border-top: 1px solid #cfd6dd;
+    border-right: 1px solid #cfd6dd;
+    padding: 16px;
+}
+
+#info p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Barra inferior */
+#footer {
+    grid-area: footer;
+    background: #263238;
+    color: white;
+    font-size: 13px;
+    padding: 8px 14px;
+}
+.ficha-presa {
+    font-family: Arial, sans-serif;
+    min-width: 260px;
+}
+
+.ficha-presa h2 {
+    margin: 0 0 10px 0;
+    color: #1f4e79;
+    font-size: 20px;
+}
+
+.ficha-presa p {
+    margin: 6px 0;
+    font-size: 14px;
+}

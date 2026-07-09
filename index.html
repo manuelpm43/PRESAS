@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso API-IDEE</title>
+
+    <link rel="stylesheet" href="https://componentes.idee.es/api-idee/assets/css/apiidee.ol.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <header id="header">
+            <div class="titulo-app">🏞 PRESAS</div>
+            <input id="buscador" type="text" placeholder="Buscar presa...">
+            <div class="usuario">⚙ Configuración</div>
+        </header>
+
+        <aside id="sidebar">
+            <h2>📂 Capas</h2>
+
+            <label><input type="checkbox" checked> Presas</label>
+            <label><input type="checkbox" checked> Límites administrativos</label>
+            <label><input type="checkbox"> Embalses</label>
+            <label><input type="checkbox"> Cuencas</label>
+            <label><input type="checkbox"> Ríos</label>
+            <label><input type="checkbox"> MDT</label>
+            <label><input type="checkbox"> Ortofoto</label>
+            <label><input type="checkbox"> HEC-RAS</label>
+            <label><input type="checkbox"> Auscultación</label>
+            <label><input type="checkbox"> Instrumentación</label>
+        </aside>
+
+        <main id="main">
+            <div id="mapa" class="m-container"></div>
+        </main>
+
+        <section id="info">
+            <h2>ℹ Información</h2>
+            <p>Seleccione una presa en el mapa para ver su ficha técnica.</p>
+        </section>
+
+        <footer id="footer">
+            Coordenadas | Escala | EPSG:3857 | PRESAS v0.4
+        </footer>
+
+    </div>
+
+    <script src="https://componentes.idee.es/api-idee/vendor/browser-polyfill.js"></script>
+    <script src="https://componentes.idee.es/api-idee/js/apiidee.ol.min.js"></script>
+    <script src="https://componentes.idee.es/api-idee/js/configuration.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
