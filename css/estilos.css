@@ -53,9 +53,16 @@ body {
 }
 
 /* Bloques */
-.bloque {
-    padding: 16px 18px;
-    border-bottom: 1px solid #e1e6eb;
+.bloque{
+
+    padding:16px;
+
+    border-top:2px solid #c7d2dc;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.9),
+        0 -1px 2px rgba(0,0,0,.04);
+
 }
 
 .bloque h2 {
@@ -257,4 +264,142 @@ body {
     height: 10px;
     background: rgba(80, 150, 85, 0.25);
     border: 1px solid #509655;
+}
+/* Distribución vertical del panel lateral */
+
+#sidebar {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bloque-buscador {
+    flex: 0 0 auto;
+}
+
+.bloque-capas {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+#info {
+    flex: 0 0 auto;
+    min-height: 180px;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 0;
+}
+h2{
+
+    background:#eef3f7;
+
+    padding:8px 10px;
+
+    border-radius:5px;
+
+    border-left:4px solid #2b5c8a;
+
+}
+/* =========================================================
+   SEPARACIÓN VISUAL ENTRE ZONAS DEL PANEL
+   ========================================================= */
+
+/* Buscador, árbol de capas e información */
+.bloque {
+    position: relative;
+    padding: 16px 18px;
+    border-top: 2px solid #c7d2dc;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 -1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* El primer bloque después del logo no necesita borde superior */
+#logo + .bloque {
+    border-top: none;
+    box-shadow: none;
+}
+
+/* Títulos de cada zona */
+.bloque > h2 {
+    margin: 0 0 12px 0;
+    padding: 8px 10px;
+
+    background: #eef3f7;
+    border-left: 4px solid #1f4e79;
+    border-radius: 4px;
+
+    color: #1f4e79;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* La zona de información queda ligeramente diferenciada */
+#info {
+    background: #f8fafc;
+    border-top: 3px solid #9fb4c7;
+}
+/* =========================================================
+   AUTOCOMPLETADO DEL BUSCADOR
+   ========================================================= */
+
+.contenedor-buscador {
+    position: relative;
+}
+
+.sugerencias-buscador {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+
+    display: none;
+    z-index: 2000;
+
+    max-height: 220px;
+    overflow-y: auto;
+
+    background: #ffffff;
+    border: 1px solid #c7d2dc;
+    border-radius: 5px;
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+.sugerencias-buscador.visible {
+    display: block;
+}
+
+.sugerencia-presa {
+    display: block;
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: none;
+    border-bottom: 1px solid #e4e9ed;
+    background: #ffffff;
+
+    color: #263746;
+    font-size: 13px;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.sugerencia-presa:last-child {
+    border-bottom: none;
+}
+
+.sugerencia-presa:hover,
+.sugerencia-presa:focus {
+    background: #eaf2f8;
+    color: #1f4e79;
+    outline: none;
+}
+
+.sugerencia-vacia {
+    padding: 10px 12px;
+    color: #7a858d;
+    font-size: 13px;
 }
