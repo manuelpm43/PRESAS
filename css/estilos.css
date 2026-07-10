@@ -114,3 +114,147 @@ body {
     margin: 6px 0;
     font-size: 14px;
 }
+/* =========================================================
+   ÁRBOL DE CAPAS
+   ========================================================= */
+
+.bloque-capas {
+    padding: 14px 12px;
+}
+
+/* Cada grupo plegable */
+.grupo-capas {
+    margin-bottom: 7px;
+    border: 1px solid #dce3e9;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* Cabecera del grupo */
+.grupo-capas summary {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 10px;
+    background: #edf3f7;
+    color: #234f78;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+/* Oculta el triángulo automático del navegador */
+.grupo-capas summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Flecha personalizada */
+.flecha-grupo::before {
+    content: "▶";
+    display: inline-block;
+    font-size: 10px;
+    transition: transform 0.18s ease;
+}
+
+/* Gira la flecha cuando el grupo está abierto */
+.grupo-capas[open] .flecha-grupo::before {
+    transform: rotate(90deg);
+}
+
+/* Cambio visual al pasar por encima */
+.grupo-capas summary:hover {
+    background: #dfeaf2;
+}
+
+/* Contenido interior */
+.contenido-grupo {
+    padding: 5px 8px 8px;
+    background: #ffffff;
+}
+
+/* Cada fila de capa */
+.fila-capa {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 28px;
+    padding: 3px 5px !important;
+
+    border-radius: 4px;
+    font-size: 13px !important;
+    cursor: pointer;
+}
+
+.fila-capa:hover {
+    background: #f1f5f8;
+}
+
+.fila-capa input {
+    margin: 0;
+}
+
+/* Capas todavía no implementadas */
+.capa-pendiente {
+    color: #9aa3aa;
+    cursor: not-allowed;
+}
+
+.capa-pendiente:hover {
+    background: transparent;
+}
+
+/* =========================================================
+   PEQUEÑOS SÍMBOLOS DE LEYENDA
+   ========================================================= */
+
+.simbolo-capa {
+    display: inline-block;
+    flex: 0 0 auto;
+}
+
+/* Punto de presa */
+.simbolo-punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1f4e79;
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 0 1px #1f4e79;
+}
+
+/* Línea administrativa */
+.simbolo-linea {
+    width: 16px;
+    height: 0;
+    border-top: 2px solid #e0c900;
+}
+
+/* Río */
+.simbolo-linea-azul {
+    width: 16px;
+    height: 0;
+    border-top: 2px solid #2589bd;
+}
+
+/* Embalse */
+.simbolo-poligono {
+    width: 14px;
+    height: 10px;
+    background: rgba(50, 145, 210, 0.35);
+    border: 1px solid #3291d2;
+}
+
+/* Cuenca */
+.simbolo-poligono-verde {
+    width: 14px;
+    height: 10px;
+    background: rgba(80, 150, 85, 0.25);
+    border: 1px solid #509655;
+}

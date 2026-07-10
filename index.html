@@ -23,31 +23,160 @@
                 </div>
             </section>
 
-            <section class="bloque">
-                <h2>🔍 SELECCIONE PRESA</h2>
-                <input id="buscador" type="text" placeholder="Buscar presa...">
-            </section>
+        <section class="bloque bloque-capas">
 
-            <section class="bloque">
-                <h2>🌍 Fondo</h2>
-                <label><input type="radio" name="fondo" checked> Cartografía</label>
-                <label><input type="radio" name="fondo"> Ortofoto</label>
-            </section>
+    <h2>📂 SELECTOR</h2>
 
-            <section class="bloque">
-                <h2>📂 Capas</h2>
-                <label><input type="checkbox" checked> PRESAS</label>
-                <label><input type="checkbox" checked> LIMITES ADMINISTRATIVOS</label>
-                <label><input type="checkbox"> EMBALSES</label>
-                <label><input type="checkbox"> RÍOS</label>
-                <label><input type="checkbox"> CUENCAS</label>
-                <label><input type="checkbox"> HEC-RAS</label>
-            </section>
+    <!-- GRUPO: INFORMACIÓN -->
+    <details class="grupo-capas" open>
 
-            <section id="info" class="bloque info">
-                <h2>ℹ Información</h2>
-                <p>Seleccione una presa en el mapa.</p>
-            </section>
+        <summary>
+            <span class="flecha-grupo"></span>
+            Información
+        </summary>
+
+        <div class="contenido-grupo">
+
+            <label class="fila-capa">
+                <input
+                    id="checkPresas"
+                    type="checkbox"
+                    checked
+                >
+                <span class="simbolo-capa simbolo-punto"></span>
+                PRESAS
+            </label>
+
+            <label class="fila-capa">
+                <input
+                    id="checkLimites"
+                    type="checkbox"
+                    checked
+                >
+                <span class="simbolo-capa simbolo-linea"></span>
+                LÍMITES ADMINISTRATIVOS
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                <span class="simbolo-capa simbolo-poligono"></span>
+                EMBALSES
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                <span class="simbolo-capa simbolo-linea-azul"></span>
+                RÍOS
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                <span class="simbolo-capa simbolo-poligono-verde"></span>
+                CUENCAS
+            </label>
+
+        </div>
+
+    </details>
+
+    <!-- GRUPO: INGENIERÍA -->
+    <details class="grupo-capas">
+
+        <summary>
+            <span class="flecha-grupo"></span>
+            Ingeniería
+        </summary>
+
+        <div class="contenido-grupo">
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                HEC-RAS
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                ZONAS INUNDABLES
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                SECCIONES
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                BRECHAS
+            </label>
+
+        </div>
+
+    </details>
+
+    <!-- GRUPO: AUSCULTACIÓN -->
+    <details class="grupo-capas">
+
+        <summary>
+            <span class="flecha-grupo"></span>
+            Auscultación
+        </summary>
+
+        <div class="contenido-grupo">
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                PIEZÓMETROS
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                INCLINÓMETROS
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                DRENES
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                CAMPAÑAS
+            </label>
+
+        </div>
+
+    </details>
+
+    <!-- GRUPO: CARTOGRAFÍA -->
+    <details class="grupo-capas">
+
+        <summary>
+            <span class="flecha-grupo"></span>
+            Cartografía
+        </summary>
+
+        <div class="contenido-grupo">
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                MDT
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                CARRETERAS
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                MUNICIPIOS
+            </label>
+
+        </div>
+
+    </details>
+
+</section>
 
         </aside>
 
@@ -63,6 +192,7 @@
     <script src="js/panel.js"></script>
     <script src="js/app.js"></script>
     <script src="js/buscador.js"></script>
+    <script src="js/capas.js"></script>
 
 </body>
 
