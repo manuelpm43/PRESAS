@@ -1,5 +1,6 @@
 const checkPresas = document.getElementById("checkPresas");
 const checkLimites = document.getElementById("checkLimites");
+const checkCaladoMaximo = document.getElementById("checkCaladoMaximo");
 
 
 /**
@@ -40,6 +41,16 @@ checkLimites.addEventListener("change", function () {
     cambiarVisibilidadCapa(
         provincias,
         checkLimites.checked
+    );
+
+});
+// Calado máximo
+checkCaladoMaximo.addEventListener("change", function () {
+
+    console.log("Calado:", checkCaladoMaximo.checked);
+
+    rasterCaladoMaximo.setVisible(
+        checkCaladoMaximo.checked
     );
 
 });

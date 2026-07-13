@@ -44,160 +44,274 @@
     </section>
 
     <!-- ÁRBOL DE CAPAS -->
-    <section class="bloque bloque-capas">
+ <section class="bloque bloque-capas">
 
-        <h2>📂 Selector</h2>
+    <h2>📂 Selector</h2>
 
-        <!-- GRUPO: INFORMACIÓN -->
-        <details class="grupo-capas" open>
+    <!-- INFORMACIÓN -->
+    <details class="grupo-capas" open>
 
-            <summary>
-                <span class="flecha-grupo"></span>
-                Información
-            </summary>
+        <summary>
+            <span class="flecha-grupo"></span>
+            Información
+        </summary>
 
-            <div class="contenido-grupo">
+        <div class="contenido-grupo">
 
-                <label class="fila-capa">
-                    <input
-                        id="checkPresas"
-                        type="checkbox"
-                        checked
-                    >
-                    <span class="simbolo-capa simbolo-punto"></span>
-                    PRESAS
-                </label>
+            <label class="fila-capa">
+                <input
+                    id="checkPresas"
+                    type="checkbox"
+                    checked
+                >
+                <span class="simbolo-capa simbolo-punto"></span>
+                PRESAS
+            </label>
 
-                <label class="fila-capa">
-                    <input
-                        id="checkLimites"
-                        type="checkbox"
-                        checked
-                    >
-                    <span class="simbolo-capa simbolo-linea"></span>
-                    LÍMITES ADMINISTRATIVOS
-                </label>
+            <label class="fila-capa">
+                <input
+                    id="checkLimites"
+                    type="checkbox"
+                    checked
+                >
+                <span class="simbolo-capa simbolo-linea"></span>
+                LÍMITES ADMINISTRATIVOS
+            </label>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    <span class="simbolo-capa simbolo-poligono"></span>
-                    EMBALSES
-                </label>
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                <span class="simbolo-capa simbolo-poligono"></span>
+                EMBALSES
+            </label>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    <span class="simbolo-capa simbolo-linea-azul"></span>
-                    RÍOS
-                </label>
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                <span class="simbolo-capa simbolo-linea-azul"></span>
+                RÍOS
+            </label>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    <span class="simbolo-capa simbolo-poligono-verde"></span>
-                    CUENCAS
-                </label>
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                <span class="simbolo-capa simbolo-poligono-verde"></span>
+                CUENCAS
+            </label>
 
-            </div>
+        </div>
 
-        </details>
+    </details>
 
-        <!-- GRUPO: INGENIERÍA -->
-        <details class="grupo-capas">
+    <!-- INGENIERÍA -->
+    <details class="grupo-capas" open>
 
-            <summary>
-                <span class="flecha-grupo"></span>
-                Ingeniería
-            </summary>
+        <summary>
+            <span class="flecha-grupo"></span>
+            Ingeniería
+        </summary>
 
-            <div class="contenido-grupo">
+        <div class="contenido-grupo">
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    HEC-RAS
-                </label>
+            <div class="capa-raster">
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    ZONAS INUNDABLES
-                </label>
+    <label class="fila-capa">
+        <input
+            id="checkCaladoMaximo"
+            type="checkbox"
+            checked
+        >
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    SECCIONES
-                </label>
+        <span class="simbolo-capa simbolo-calado"></span>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    BRECHAS
-                </label>
+        CALADO MÁXIMO
+    </label>
 
-            </div>
+    <!-- Herramientas de la capa ráster -->
+    <div class="herramientas-raster">
 
-        </details>
+        <button
+            id="btnPaletaCalado"
+            class="boton-raster"
+            type="button"
+            title="Cambiar paleta de colores"
+        >
+            🎨
+        </button>
 
-        <!-- GRUPO: AUSCULTACIÓN -->
-        <details class="grupo-capas">
+        <div class="control-opacidad" title="Opacidad de la capa">
 
-            <summary>
-                <span class="flecha-grupo"></span>
-                Auscultación
-            </summary>
+            <span>◐</span>
 
-            <div class="contenido-grupo">
+            <input
+                id="sliderOpacidadCalado"
+                type="range"
+                min="0"
+                max="100"
+                value="80"
+                step="1"
+            >
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    PIEZÓMETROS
-                </label>
+            <output id="valorOpacidadCalado">
+                80 %
+            </output>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    INCLINÓMETROS
-                </label>
+        </div>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    DRENES
-                </label>
+        <button
+            id="btnConsultarCalado"
+            class="boton-raster"
+            type="button"
+            title="Consultar valor del calado"
+            aria-pressed="false"
+        >
+            ℹ
+        </button>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    CAMPAÑAS
-                </label>
+        <button
+            id="btnLeyendaCalado"
+            class="boton-raster"
+            type="button"
+            title="Mostrar leyenda"
+        >
+            ▤
+        </button>
 
-            </div>
+    </div>
 
-        </details>
+    <!-- Selector de paleta -->
+    <div
+        id="panelPaletaCalado"
+        class="panel-herramienta-raster"
+        hidden
+    >
 
-        <!-- GRUPO: CARTOGRAFÍA -->
-        <details class="grupo-capas">
+        <label for="selectPaletaCalado">
+            Paleta:
+        </label>
 
-            <summary>
-                <span class="flecha-grupo"></span>
-                Cartografía
-            </summary>
+        <select id="selectPaletaCalado">
+            <option value="hidraulica">
+                Hidráulica
+            </option>
 
-            <div class="contenido-grupo">
+            <option value="azules">
+                Azules
+            </option>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    MDT
-                </label>
+            <option value="grises">
+                Escala de grises
+            </option>
+        </select>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    CARRETERAS
-                </label>
+    </div>
 
-                <label class="fila-capa capa-pendiente">
-                    <input type="checkbox" disabled>
-                    MUNICIPIOS
-                </label>
+    <!-- Leyenda -->
+    <div
+        id="leyendaCalado"
+        class="leyenda-raster"
+        hidden
+    >
 
-            </div>
+        <div class="titulo-leyenda">
+            Calado máximo
+        </div>
 
-        </details>
+        <div class="fila-leyenda">
+            <span class="color-calado color-calado-1"></span>
+            0–0,50 m
+        </div>
 
-    </section>
+        <div class="fila-leyenda">
+            <span class="color-calado color-calado-2"></span>
+            0,50–1,00 m
+        </div>
+
+        <div class="fila-leyenda">
+            <span class="color-calado color-calado-3"></span>
+            1,00–2,00 m
+        </div>
+
+        <div class="fila-leyenda">
+            <span class="color-calado color-calado-4"></span>
+            2,00–4,00 m
+        </div>
+
+        <div class="fila-leyenda">
+            <span class="color-calado color-calado-5"></span>
+            Más de 4,00 m
+        </div>
+
+    </div>
+
+</div>
+
+            <label class="fila-capa capa-pendiente">
+                <input
+                    id="checkVelocidadMaxima"
+                    type="checkbox"
+                    disabled
+                >
+                <span class="simbolo-capa simbolo-velocidad"></span>
+                VELOCIDAD MÁXIMA
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input
+                    id="checkTiempoLlegada"
+                    type="checkbox"
+                    disabled
+                >
+                <span class="simbolo-capa simbolo-tiempo"></span>
+                TIEMPO DE LLEGADA
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input
+                    id="checkZFP"
+                    type="checkbox"
+                    disabled
+                >
+                <span class="simbolo-capa simbolo-zfp"></span>
+                ZONA DE FLUJO PREFERENTE (ZFP)
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                ZONAS INUNDABLES
+            </label>
+          
+        </div>
+
+    </details>
+
+    <!-- CARTOGRAFÍA -->
+    <details class="grupo-capas">
+
+        <summary>
+            <span class="flecha-grupo"></span>
+            Cartografía
+        </summary>
+
+        <div class="contenido-grupo">
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                MDT
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                ORTOFOTO
+            </label>
+
+            <label class="fila-capa capa-pendiente">
+                <input type="checkbox" disabled>
+                CARRETERAS
+            </label>
+
+        </div>
+
+    </details>
+
+</section>   
 
     <!-- PANEL DE INFORMACIÓN -->
     <section id="info" class="bloque info">
@@ -220,7 +334,11 @@
     <script src="js/app.js"></script>
     <script src="js/buscador.js"></script>
     <script src="js/capas.js"></script>
+
+
+    <script src="js/raster/RasterLayer.js"></script>
     <script src="js/raster.js"></script>
+    <script src="js/capas.js"></script>
 
 </body>
 
